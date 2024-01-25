@@ -1,0 +1,39 @@
+/* Dashboard.css */
+
+.dashboard-container {
+  display: flex;
+  height: 100vh; /* 100% of the viewport height */
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #c3d2c5;
+  color: #fff;
+  padding: 20px;
+}
+
+.header {
+  background-color: #555;
+  color: #fff;
+  padding: 10px;
+  text-align: right;
+  flex: 1; /* Takes up remaining space */
+}
+
+.content {
+  flex: 4; /* Takes up most of the space */
+  padding: 20px;
+}
+
+.logout {
+  background-color: #f00;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+/* Style for the nested routes */
+.content h2 {
+  margin-bottom: 20px;
+}

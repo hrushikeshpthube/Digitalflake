@@ -1,19 +1,20 @@
 // Dashboard.js
 
 import React from 'react';
-import { Link, Route, Switch, useHistory } from 'react-router-dom';
+import { Link, Route, Routes, useNavigate } from 'react-router-dom';
 import Home from './Home'; // Create Home component separately
 import Category from './Category'; // Create Category component separately
 import Products from './Products'; // Create Products component separately
 import './Dashboard.css';
 
 const Dashboard = ({ onLogout }) => {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     // Add logic for logout
+    alert("Logged out");
     onLogout();
-    history.push('/');
+    navigate('/');
   };
 
   return (
@@ -37,11 +38,12 @@ const Dashboard = ({ onLogout }) => {
         </button>
       </div>
       <div className="content">
-        <Switch>
-          <Route path="/dashboard/home" component={Home} />
-          <Route path="/dashboard/category" component={Category} />
-          <Route path="/dashboard/products" component={Products} />
-        </Switch>
+        {/* Add Routes component to handle nested routes */}
+        <Routes>
+          <Route path="home" element={<Home />} />
+          <Route path="category" element={<Category />} />
+          <Route path="products" element={<Products />} />
+        </Routes>
       </div>
     </div>
   );
